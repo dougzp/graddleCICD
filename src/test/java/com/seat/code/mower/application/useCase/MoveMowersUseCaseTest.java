@@ -4,12 +4,13 @@ import com.seat.code.mower.domain.repositroy.IMowerRepository;
 import com.seat.code.mower.domain.repositroy.MowerRepository;
 import com.seat.code.mower.domain.service.MowerRunner;
 import com.seat.code.mower.ports.*;
+import com.seat.code.mower.ports.exception.OutOfPlateauBoundsException;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MoveMowersUseCaseTest {
 
@@ -36,4 +37,28 @@ class MoveMowersUseCaseTest {
         MoveMowersUseCase useCase =  new MoveMowersUseCase(initializeMower,initializePlateau,moveMower, reader);
         return useCase;
     }
+
+    @Test
+    void mowerInvalidCommandOutOfDimensionsShouldReturnException() {
+        List<String> commands = Arrays.asList("5 5","1 2 N","LMLMLMLMM","3 3 E" , "MMRMMMMMRMRRM");
+        ValidateInputCommands validateInputCommands= new com.seat.code.mower.adapters.ValidateInputCommands();
+        CommandReader reader = new com.seat.code.mower.adapters.CommandReader(validateInputCommands);
+        DBService dbService = new com.seat.code.mower.adapters.DBService();
+        MoveMowersUseCase useCase = getMoveMowersUseCase(dbService, validateInputCommands, reader);
+        OutOfPlateauBoundsException thrown = assertThrows(
+                OutOfPlateauBoundsException.class,
+                () -> {
+                    List<String> result = useCase.processCommandsMower(commands);
+                    System.out.println(result);
+                },
+                "Expected moveMower() to throw OutOfPlateauBoundsException, but it didn't"
+        );
+
+        assertTrue(thrown.getMessage().contains("The mower is out of the plateau's bounds!"));
+
+
+
+    }
+
+
 }

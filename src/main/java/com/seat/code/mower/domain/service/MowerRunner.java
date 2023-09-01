@@ -5,6 +5,7 @@ import com.seat.code.mower.domain.model.Orientation;
 import com.seat.code.mower.domain.model.Plateau;
 import com.seat.code.mower.domain.model.Position;
 import com.seat.code.mower.domain.repositroy.IMowerRepository;
+import com.seat.code.mower.ports.exception.OutOfPlateauBoundsException;
 import com.seat.code.mower.ports.tos.MowerOrientation;
 import com.seat.code.mower.ports.tos.MowerPlateau;
 import com.seat.code.mower.ports.tos.MowerPosition;
@@ -40,32 +41,27 @@ public class MowerRunner implements IMowerRunner {
             int currentPositionY = currentPos.getCurrentPositionY();
 
             switch (c) {
-                case 'R':
-                    newDegreesPosition = (newDegreesPosition + 90) % 360;
-                    break;
-                case 'L':
-                    newDegreesPosition = (newDegreesPosition - 90 + 360) % 360;
-                    break;
-                case 'M':
+                case 'R' -> newDegreesPosition = (newDegreesPosition + 90) % 360;
+                case 'L' -> newDegreesPosition = (newDegreesPosition - 90 + 360) % 360;
+                case 'M' -> {
                     switch (newDegreesPosition) {
-                        case 0:
-                        case 360:
-                            currentPositionY++;
-                            break;
-                        case 180:
-                            currentPositionY--;
-                            break;
-                        case 90:
-                            currentPositionX++;
-                            break;
-                        case 270:
-                            currentPositionX--;
-                            break;
+                        case 0, 360 -> currentPositionY++;
+                        case 180 -> currentPositionY--;
+                        case 90 -> currentPositionX++;
+                        case 270 -> currentPositionX--;
                     }
-                    break;
+                }
             }
-            return new MowerPosition(currentPositionX, currentPositionY, MowerOrientation.getByDegrees(newDegreesPosition), currentPos.getPlateau());
-        }, (p1, p2) -> p2); // This combiner function is required by reduce method but is not used in sequential streams.
+
+            // ADD VALIDATION
+            if (currentPositionX< 0 || currentPositionX > currentPos.getPlateau().getDimensionX() ||
+            currentPositionY< 0 || currentPositionY > currentPos.getPlateau().getDimensionY()) {
+                throw new OutOfPlateauBoundsException("The mower is out of the plateau's bounds!");
+            }
+
+            return new MowerPosition(currentPositionX, currentPositionY,
+                    MowerOrientation.getByDegrees(newDegreesPosition), currentPos.getPlateau());
+        }, (p1, p2) -> p2);// This combiner function is required by reduce method but is not used in sequential streams.
     }
 
     @Override
