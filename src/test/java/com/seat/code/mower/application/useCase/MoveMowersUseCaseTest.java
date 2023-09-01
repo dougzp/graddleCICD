@@ -22,7 +22,7 @@ class MoveMowersUseCaseTest {
         DBService dbService = new com.seat.code.mower.adapters.DBService();
         MoveMowersUseCase useCase = getMoveMowersUseCase(dbService, validateInputCommands, reader);
         List<String> result = useCase.processCommandsMower(commands);
-        assertEquals("1 3 N", result.get(2));
+        assertEquals("1 3 N", result.get(0));
         assertEquals("5 1 E", result.get(1));
 
     }
