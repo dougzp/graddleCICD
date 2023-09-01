@@ -5,50 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b0fdd9a-e392-435c-9dab-7e8dd539ab72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/adapters/CommandReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/adapters/DBService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/adapters/InitializeMower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/adapters/InitializePlateau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/adapters/MoveMower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/adapters/ValidateInputCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/application/useCase/MoveMowersUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/domain/model/Mower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/domain/model/Orientation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/domain/model/Plateau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/domain/model/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/domain/repositroy/IMowerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/domain/repositroy/MowerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/domain/service/IMowerRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/domain/service/MowerRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/CommandReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/DBService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/InitializeMower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/InitializePlateau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/MoveMower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/ValidateInputCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/tos/MowerCommandType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/tos/MowerCommands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/tos/MowerOrientation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/tos/MowerPlateau.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/tos/MowerPosition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/seat/code/mower/ports/tos/MowerTos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/seat/code/mower/MainTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/seat/code/mower/application/useCase/MoveMowersUseCaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/seat/code/mower/domain/model/MowerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/seat/code/mower/domain/service/MowerRunnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/buildAndPublish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/buildAndPublish.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +46,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -100,27 +61,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;E:/JAVATEST/Seat-Code-Mower/src/main/java/com/seat/code/mower/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "cicd",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "E:/JAVATEST/Seat-Code-Mower/src/main/java/com/seat/code/mower/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -138,7 +99,7 @@
       <recent name="com.seat.code.mower.ports.tos" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MoveMowersUseCaseTest.moveMower">
+  <component name="RunManager" selected="Gradle.MoveMowersUseCaseTest">
     <configuration name="MoveMowersUseCaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -259,8 +220,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MoveMowersUseCaseTest.moveMower" />
         <item itemvalue="Gradle.MoveMowersUseCaseTest" />
+        <item itemvalue="Gradle.MoveMowersUseCaseTest.moveMower" />
         <item itemvalue="Gradle.Tests in 'Seat-Code-Mower.test'" />
         <item itemvalue="Gradle.MowerRunnerTest" />
         <item itemvalue="Gradle.MowerRunnerTest.initializePlateauAndMower" />
@@ -278,6 +239,7 @@
       <workItem from="1693410790409" duration="10778000" />
       <workItem from="1693474918901" duration="22290000" />
       <workItem from="1693555105660" duration="810000" />
+      <workItem from="1693557482174" duration="3217000" />
     </task>
     <servers />
   </component>
@@ -397,7 +359,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Seat_Code_Mower$MowerTest.ic" NAME="MowerTest Coverage Results" MODIFIED="1693416456054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Seat_Code_Mower$Tests_in__Seat_Code_Mower_test_.ic" NAME="Tests in 'Seat-Code-Mower.test' Coverage Results" MODIFIED="1693498993951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Seat_Code_Mower$MoveMowersUseCaseTest.ic" NAME="MoveMowersUseCaseTest Coverage Results" MODIFIED="1693499193666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Seat_Code_Mower$MoveMowersUseCaseTest.ic" NAME="MoveMowersUseCaseTest Coverage Results" MODIFIED="1693557527428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Seat_Code_Mower$MoveMowersUseCaseTest_moveMower.ic" NAME="MoveMowersUseCaseTest.moveMower Coverage Results" MODIFIED="1693499250340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
