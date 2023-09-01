@@ -3,16 +3,24 @@ package com.seat.code.mower.domain.service;
 import com.seat.code.mower.domain.repositroy.IMowerRepository;
 import com.seat.code.mower.domain.repositroy.MowerRepository;
 import com.seat.code.mower.ports.DBService;
+import com.seat.code.mower.ports.exception.OutOfPlateauBoundsException;
 import com.seat.code.mower.ports.tos.MowerOrientation;
 import com.seat.code.mower.ports.tos.MowerPlateau;
 import com.seat.code.mower.ports.tos.MowerPosition;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MowerRunnerTest {
 
+    private MowerRunner runner;
 
+    @BeforeEach
+    public void setUp() {
+        runner = new MowerRunner(null);
+    }
     @Test
     void initializePlateauAndMower() {
 
@@ -47,5 +55,41 @@ class MowerRunnerTest {
         return new MowerPosition(initialPositionX,initialPositionY,MowerOrientation.N,mowerPlateau);
     }
 
+
+    @Test
+    public void testValidatePositionInsidePlateau() {
+        MowerPlateau plateau = new MowerPlateau(5, 5);
+        MowerPosition position = new MowerPosition(3, 3, null, plateau);  // Mock position
+
+        assertDoesNotThrow(() ->
+                runner.validateIfMowerPositionStillInsidePlateau(position, 4, 4));
+    }
+
+    @Test
+    public void testValidatePositionOutsidePlateauOnX() {
+        MowerPlateau plateau = new MowerPlateau(5, 5);
+        MowerPosition position = new MowerPosition(6, 3, null, plateau);
+
+        assertThrows(OutOfPlateauBoundsException.class, () ->
+                runner.validateIfMowerPositionStillInsidePlateau(position, 6, 3));
+    }
+
+    @Test
+    public void testValidatePositionOutsidePlateauOnY() {
+        MowerPlateau plateau = new MowerPlateau(5, 5);
+        MowerPosition position = new MowerPosition(3, 6, null, plateau);
+
+        assertThrows(OutOfPlateauBoundsException.class, () ->
+                runner.validateIfMowerPositionStillInsidePlateau(position, 3, 6));
+    }
+
+    @Test
+    public void testValidatePositionOutsidePlateauOnBothAxes() {
+        MowerPlateau plateau = new MowerPlateau(5, 5);
+        MowerPosition position = new MowerPosition(6, 6, null, plateau);
+
+        assertThrows(OutOfPlateauBoundsException.class, () ->
+                runner.validateIfMowerPositionStillInsidePlateau(position, 6, 6));
+    }
 
 }

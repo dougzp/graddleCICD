@@ -8,6 +8,9 @@ import com.seat.code.mower.ports.tos.MowerPosition;
 public interface IMowerRunner {
 
     MowerPosition initializePlateauAndMower(int currentPositionX, int currentPositionY, MowerOrientation orientation, MowerPlateau mowerPlateau);
-    MowerPosition moveMower(String commandMove,MowerPosition position);
+
+    MowerPosition moveMower(String commandMove, MowerPosition position);
+
     void saveMowerState(Mower mower);
 }
+

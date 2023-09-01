@@ -53,19 +53,24 @@ public class MowerRunner implements IMowerRunner {
                 }
             }
 
-            // ADD VALIDATION
-            if (currentPositionX< 0 || currentPositionX > currentPos.getPlateau().getDimensionX() ||
-            currentPositionY< 0 || currentPositionY > currentPos.getPlateau().getDimensionY()) {
-                throw new OutOfPlateauBoundsException("The mower is out of the plateau's bounds!");
-            }
+
+            validateIfMowerPositionStillInsidePlateau(currentPos, currentPositionX, currentPositionY);
 
             return new MowerPosition(currentPositionX, currentPositionY,
                     MowerOrientation.getByDegrees(newDegreesPosition), currentPos.getPlateau());
         }, (p1, p2) -> p2);// This combiner function is required by reduce method but is not used in sequential streams.
     }
 
+    protected void validateIfMowerPositionStillInsidePlateau(MowerPosition currentPos, int currentPositionX, int currentPositionY) {
+        if (currentPositionX < 0 || currentPositionX > currentPos.getPlateau().getDimensionX() ||
+                currentPositionY < 0 || currentPositionY > currentPos.getPlateau().getDimensionY()) {
+            throw new OutOfPlateauBoundsException("The mower is out of the plateau's bounds!");
+        }
+    }
     @Override
     public void saveMowerState(Mower mower) {
         this.repository.savaMowerState(mower);
     }
+
+
 }
