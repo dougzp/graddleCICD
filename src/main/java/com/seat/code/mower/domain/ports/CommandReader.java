@@ -1,6 +1,6 @@
-package com.seat.code.mower.ports;
+package com.seat.code.mower.domain.ports;
 
-import com.seat.code.mower.ports.tos.MowerCommands;
+import com.seat.code.mower.adapters.tos.MowerCommands;
 
 import java.util.List;
 

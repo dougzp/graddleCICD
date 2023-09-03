@@ -15,10 +15,11 @@ class MowerTest {
         UUID uuid = UUID.randomUUID();
         Position initialPosition = new Position(1,2, Orientation.N);
 
-        Mower mower  = new Mower(uuid, plateau, initialPosition);
+        Mower mower  = new Mower(uuid, plateau);
+        mower.setCurrentPosition(initialPosition);
         // then
         assertEquals(uuid, mower.getUuid());
-        assertEquals(plateau, mower.getPlanteau());
+        assertEquals(plateau, mower.getPlateau());
         assertEquals(initialPosition, mower.getCurrentPosition());
 
     }
@@ -49,7 +50,8 @@ class MowerTest {
         Plateau plateau =  new Plateau(5,10);
         UUID uuid = UUID.randomUUID();
         Position initialPosition = new Position(1,2, Orientation.N);
-        Mower mower = new Mower(uuid, plateau, initialPosition);
+        Mower mower = new Mower(uuid, plateau );
+        mower.setCurrentPosition(initialPosition);
         int newPositionX=2;
         int newPositionY=1;
         Orientation newOrientation=Orientation.S;

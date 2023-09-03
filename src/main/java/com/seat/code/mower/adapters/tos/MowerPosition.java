@@ -1,8 +1,7 @@
-package com.seat.code.mower.ports.tos;
-
-import com.seat.code.mower.domain.model.Orientation;
+package com.seat.code.mower.adapters.tos;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class MowerPosition {
 
@@ -11,8 +10,6 @@ public final class MowerPosition {
     private final int currentPositionY;
 
     private final MowerOrientation currentOrientation;
-    private final MowerPlateau plateau;
-
 
     public int getCurrentPositionX() {
         return currentPositionX;
@@ -25,13 +22,12 @@ public final class MowerPosition {
     public MowerOrientation getCurrentOrientation() {
         return currentOrientation;
     }
-    public MowerPlateau getPlateau() { return plateau; }
 
-    public MowerPosition(int currentPositionX, int currentPositionY, MowerOrientation currentOrientation, MowerPlateau plateau) {
+    public MowerPosition(int currentPositionX, int currentPositionY, MowerOrientation currentOrientation) {
         this.currentPositionX = currentPositionX;
         this.currentPositionY = currentPositionY;
         this.currentOrientation = currentOrientation;
-        this.plateau = plateau;
+
     }
 
     @Override
@@ -53,7 +49,6 @@ public final class MowerPosition {
                 "currentPositionX=" + currentPositionX +
                 ", currentPositionY=" + currentPositionY +
                 ", currentOrientation=" + currentOrientation +
-                ", plateau=" + plateau +
                 '}';
     }
 }

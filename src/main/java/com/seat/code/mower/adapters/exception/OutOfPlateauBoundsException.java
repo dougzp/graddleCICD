@@ -1,4 +1,4 @@
-package com.seat.code.mower.ports.exception;
+package com.seat.code.mower.adapters.exception;
 
 public class OutOfPlateauBoundsException extends RuntimeException {
     public OutOfPlateauBoundsException(String message) {

@@ -1,26 +1,19 @@
 package com.seat.code.mower.adapters;
 
-import com.seat.code.mower.domain.service.IMowerRunner;
-import com.seat.code.mower.ports.ValidateInputCommands;
-import com.seat.code.mower.ports.tos.MowerOrientation;
-import com.seat.code.mower.ports.tos.MowerPlateau;
-import com.seat.code.mower.ports.tos.MowerPosition;
+import com.seat.code.mower.domain.model.Mower;
+import com.seat.code.mower.domain.model.Orientation;
+import com.seat.code.mower.domain.model.Plateau;
+import com.seat.code.mower.domain.model.Position;
+import com.seat.code.mower.adapters.tos.MowerOrientation;
 
-public class InitializeMower implements com.seat.code.mower.ports.InitializeMower {
+import java.util.UUID;
+
+public class InitializeMower implements com.seat.code.mower.domain.ports.InitializeMower {
     public static final String SPACE = " ";
-    private final ValidateInputCommands validator;
-    private final IMowerRunner runner;
-    public InitializeMower(ValidateInputCommands validator, IMowerRunner runner) {
-        this.validator = validator;
-        this.runner = runner;
-    }
+
 
     @Override
-    public MowerPosition initializeMowerPosition(MowerPlateau plateau, String moverInitCommand) {
-
-        if(!this.validator.validateMowerInitCommand(moverInitCommand)) {
-            return null;
-        }
+    public Mower initializeMowerPosition(Plateau plateau, String moverInitCommand) {
 
         String[] mowerCommand = moverInitCommand.trim().split(SPACE);
         int initialPositionX =  Integer.parseInt(mowerCommand[0]);
@@ -28,7 +21,10 @@ public class InitializeMower implements com.seat.code.mower.ports.InitializeMowe
 
         MowerOrientation mowerOrientation = MowerOrientation.getByString(mowerCommand[2]);
 
-        return  runner.initializePlateauAndMower(initialPositionX,initialPositionY,mowerOrientation,plateau);
+        Position initialPosition = new Position(initialPositionX,initialPositionY, Orientation.getByDegrees(mowerOrientation.getDegrees()));
+        Mower mower  = new Mower(UUID.randomUUID(),plateau);
+        mower.setCurrentPosition(initialPosition);
+        return mower;
     }
 
 

@@ -2,10 +2,12 @@ package com.seat.code.mower.domain.model;
 
 public final class Position {
 
-    public Position(int posInX, int currentPositionY, Orientation orientation) {
+    public Position(int posInX, int posInY, Orientation orientation) {
+        //validar posiciones sean positivos
         this.posInX = posInX;
-        this.posInY = currentPositionY;
+        this.posInY = posInY;
         this.orientation = orientation;
+
     }
     private final int posInX;
 

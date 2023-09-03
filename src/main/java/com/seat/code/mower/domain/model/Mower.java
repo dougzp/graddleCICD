@@ -4,24 +4,26 @@ import java.util.UUID;
 
 public final class Mower {
 
-    public Mower(UUID uuid, Plateau plateau, Position initialPosition) {
+    public Mower(UUID uuid, Plateau plateau) {
         this.uuid = uuid;
         this.plateau = plateau;
-        this.currentPosition = initialPosition;
     }
 
     public UUID getUuid() {
         return uuid;
     }
 
-    private final UUID uuid;
-
-    public Plateau getPlanteau() {
-        return plateau;
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
     }
 
+    private UUID uuid;
     private final Plateau plateau;
+    private Position currentPosition;
 
+    public Plateau getPlateau() {
+        return plateau;
+    }
 
     public Position getCurrentPosition() {
         return currentPosition;
@@ -31,7 +33,7 @@ public final class Mower {
         this.currentPosition = currentPosition;
     }
 
-    private Position currentPosition;
+
 
 }
 

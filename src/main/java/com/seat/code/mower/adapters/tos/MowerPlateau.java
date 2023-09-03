@@ -1,4 +1,6 @@
-package com.seat.code.mower.ports.tos;
+package com.seat.code.mower.adapters.tos;
+
+import com.seat.code.mower.domain.model.Plateau;
 
 public class MowerPlateau {
 
@@ -16,5 +18,9 @@ public class MowerPlateau {
 
     public int getDimensionY() {
         return dimensionY;
+    }
+
+    public Plateau ToDomain(){
+      return new Plateau(this.getDimensionX(),this.getDimensionY());
     }
 }

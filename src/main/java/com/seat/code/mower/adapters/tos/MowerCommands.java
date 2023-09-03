@@ -1,4 +1,4 @@
-package com.seat.code.mower.ports.tos;
+package com.seat.code.mower.adapters.tos;
 
 public class MowerCommands {
 

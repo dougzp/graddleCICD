@@ -1,8 +1,7 @@
 package com.seat.code.mower;
 
-import com.seat.code.mower.ports.ValidateInputCommands;
-import com.seat.code.mower.ports.tos.MowerOrientation;
-import com.seat.code.mower.ports.tos.MowerPosition;
+import com.seat.code.mower.domain.ports.ValidateInputCommands;
+import com.seat.code.mower.adapters.tos.MowerOrientation;
 
 import java.util.Scanner;
 
@@ -14,13 +13,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String initPlateau = scanner.nextLine();
         ValidateInputCommands validator = new com.seat.code.mower.adapters.ValidateInputCommands();
-        Boolean isValidPlateauInitCommand = validator.validatePlateauInitCommand(initPlateau);
-        if(!isValidPlateauInitCommand){
-            System.out.println("Invalid Plateau initialization, value should be compose by 2 Integers like : 5 5");
-        }
 
         String initMower = scanner.nextLine();
-        Boolean isValidMowerInitCommand = validator.validateMowerInitCommand(initMower);
         String[] moverInitCommand = initMower.split(SPACE);
         int mowerPositionX= Integer.parseInt(moverInitCommand[0]);
         int mowerPositionY= Integer.parseInt(moverInitCommand[1]);

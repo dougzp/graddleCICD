@@ -3,7 +3,7 @@ package com.seat.code.mower.adapters;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
-public class ValidateInputCommands implements com.seat.code.mower.ports.ValidateInputCommands {
+public class ValidateInputCommands implements com.seat.code.mower.domain.ports.ValidateInputCommands {
     @Override
     public Character validateAndNormalizeInputOrientationCommand(Character input) {
         Predicate<Character> validLetterPredicate = c -> "NSWE".indexOf(Character.toUpperCase(c)) != -1;
@@ -13,18 +13,15 @@ public class ValidateInputCommands implements com.seat.code.mower.ports.Validate
         return Character.toUpperCase(input);
     }
 
-    public Boolean validatePlateauInitCommand(String input) {
-        Predicate<String> isTwoNumbers = Pattern.compile("^\\d+ \\d+$").asPredicate();
-        return isTwoNumbers.test(input);
+    public Predicate<String> validatePlateauInitCommand() {
+        return Pattern.compile("^\\d+ \\d+$").asPredicate();
     }
 
-    public Boolean validateMowerInitCommand(String input) {
-        Predicate<String> isTwoNumbersAndALetter = Pattern.compile("^\\d+ \\d+ [A-Za-z]$").asPredicate();
-        return isTwoNumbersAndALetter.test(input);
+    public Predicate<String> validateMowerInitCommand() {
+        return Pattern.compile("^\\d+ \\d+ [A-Za-z]$").asPredicate();
     }
-    public Boolean validateMowerMoveCommand(String input) {
-        Predicate<String> onlyLRM = Pattern.compile("^[LRM]+$").asPredicate();
-        return onlyLRM.test(input);
+    public Predicate<String> validateMowerMoveCommand() {
+        return Pattern.compile("^[LRM]+$").asPredicate();
     }
 
 
